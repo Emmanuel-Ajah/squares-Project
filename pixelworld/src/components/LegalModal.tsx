@@ -27,44 +27,44 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="legal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#211A3E]/60 backdrop-blur-xs animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg bg-white border-3 border-[#18181B] shadow-[8px_8px_0px_#18181B] p-6 sm:p-8 text-[#18181B] max-h-[85vh] overflow-y-auto"
+        className="relative w-full max-w-lg bg-white border-2 border-[#211A3E] rounded-[20px] shadow-[8px_8px_0_#211A3E] p-6 sm:p-8 text-[#211A3E] max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-4 right-4 p-1.5 rounded-sm border-2 border-[#18181B] hover:bg-[#F4F4F5] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FFD23F]"
+          className="absolute top-4 right-4 p-1.5 rounded-full border border-[#211A3E] bg-[#FFFBEB] hover:bg-[#FFD23F] transition-colors focus:outline-none"
         >
-          <X className="w-5 h-5 text-[#18181B]" />
+          <X className="w-5 h-5 text-[#211A3E]" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-2 mb-3">
-          <span className="retro-sticker bg-[#FFD23F] text-[#18181B] text-xs">
+          <span className="sticker tilt-l bg-[#FFD23F] text-[#211A3E] text-xs">
             {isPrivacy ? <ShieldAlert className="w-3.5 h-3.5" /> : <FileText className="w-3.5 h-3.5" />}
-            Pre-Launch Draft Placeholder
+            Pre-Launch Draft Overview
           </span>
         </div>
 
-        <h3 id="legal-title" className="text-2xl font-black text-[#18181B] mb-2">
+        <h3 id="legal-title" className="text-2xl font-bold font-['Fredoka'] text-[#211A3E] mb-2">
           {title}
         </h3>
         
-        <p className="text-xs font-mono text-zinc-500 mb-5">
+        <p className="text-xs font-mono text-[#5B5477] mb-5">
           Status: In progress • To be finalized before public reservation launch
         </p>
 
         {/* Content Body */}
-        <div className="space-y-4 text-sm text-zinc-700 leading-relaxed bg-zinc-50 p-4 border-2 border-zinc-200 rounded-xs font-medium">
+        <div className="space-y-4 text-sm text-[#5B5477] leading-relaxed bg-[#FFFBEB] p-4 border-2 border-[#211A3E] rounded-[14px] font-semibold">
           {isPrivacy ? (
             <>
               <p>
-                <strong>Privacy Policy (Draft Overview):</strong>
+                <strong className="text-[#211A3E]">Privacy Policy (Draft Overview):</strong>
               </p>
               <p>
                 PixelWorld values your privacy. We will collect only essential information required to reserve and maintain your pixel coordinates (e.g., your display name, contact email for order confirmation, and the URL and artwork you wish to showcase).
@@ -76,7 +76,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           ) : (
             <>
               <p>
-                <strong>Terms of Service & Content Guidelines (Draft Overview):</strong>
+                <strong className="text-[#211A3E]">Terms of Service & Content Guidelines (Draft Overview):</strong>
               </p>
               <p>
                 PixelWorld is designed to be an open, positive, and enduring monument for the web. All user-submitted artwork, graphics, and links will undergo human moderation before rendering.
@@ -92,7 +92,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
         <div className="mt-6 flex justify-end">
           <button
             onClick={onClose}
-            className="btn-indie-secondary py-2 px-5 text-sm font-bold"
+            className="btn-candy btn-candy-pink !py-2.5 !px-6 !text-sm"
           >
             Understood
           </button>

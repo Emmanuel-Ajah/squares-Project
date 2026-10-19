@@ -190,6 +190,11 @@ export const EarlyAccessForm: React.FC<EarlyAccessFormProps> = ({ selectedSquare
                   <option value={4}>Micro Tile (2×2, 4 squares) — proposed $4</option>
                   <option value={16}>Community Block (4×4, 16 squares) — proposed $16</option>
                   <option value={64}>Landmark Block (8×8, 64 squares) — proposed $64</option>
+                  {![1, 4, 16, 64].includes(squares) && (
+                    <option value={squares}>
+                      Custom Block ({squares} squares) — proposed ${squares * siteConfig.proposedPricePerSquare}
+                    </option>
+                  )}
                 </select>
               </div>
 
